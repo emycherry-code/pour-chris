@@ -2,19 +2,19 @@
 const HUSBAND_NAME = "Chris";
 const SECRET_CODE = "1709";
 
-const LOVE_MESSAGE = `Mon Chris,
+const LOVE_MESSAGE = `Mon petit coeur de beurre,
 
 Si tu es en train de lire ces mots, c'est que tu as trouvé le bon code (bravo, mon amour) !
 Je voulais juste te rappeler, comme ça, un jour sans occasion particulière,
 à quel point je t'aime et à quel point tu comptes pour moi.
 
-Merci d'être toi. Merci pour ton sourire, ta patience, et tous ces petits
+Merci d'être toi. Merci pour ton amour, ta patience, et tous ces petits
 moments du quotidien qui, avec toi, deviennent précieux.
 
 Je t'aime.`;
 
 const REASONS = [
-  "Parce que ton sourire illumine mes journées.",
+  "Parce que ton rire illumine mes journées.",
   "Parce que tu me fais rire même quand j'ai décidé de bouder.",
   "Parce que tu prends soin de moi sans jamais rien attendre en retour.",
   "Parce qu'avec toi, même les jours gris deviennent supportables.",
