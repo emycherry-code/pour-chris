@@ -1,0 +1,232 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fecfef 40%, #ffdde1);
+  overflow-x: hidden;
+}
+
+/* ---------- Ecran digicode ---------- */
+
+#lock-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+#lock-screen h1 {
+  font-family: 'Georgia', serif;
+  color: #b5305a;
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+}
+
+.heart-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: pulse 1.4s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+#code-display {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.code-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #b5305a;
+  background: transparent;
+  transition: background 0.15s ease;
+}
+
+.code-dot.filled {
+  background: #b5305a;
+}
+
+#code-display.shake {
+  animation: shake 0.4s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-10px); }
+  40%, 80% { transform: translateX(10px); }
+}
+
+#keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+  gap: 14px;
+}
+
+.key {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #b5305a;
+  font-size: 1.4rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(181, 48, 90, 0.2);
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.1s ease;
+}
+
+.key:active {
+  transform: scale(0.92);
+  background: #ffe3ea;
+}
+
+.key.wide {
+  font-size: 0.95rem;
+}
+
+#hint {
+  margin-top: 18px;
+  color: #8a3550;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* ---------- Page d'amour ---------- */
+
+#love-page {
+  display: none;
+  min-height: 100vh;
+  padding: 40px 20px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#love-page.visible {
+  display: block;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#love-page h1 {
+  font-family: 'Georgia', serif;
+  color: #b5305a;
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+#love-page .subtitle {
+  color: #8a3550;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+#message {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  padding: 28px;
+  line-height: 1.7;
+  color: #6b2440;
+  font-size: 1.05rem;
+  box-shadow: 0 6px 20px rgba(181, 48, 90, 0.15);
+}
+
+#reasons-box {
+  max-width: 500px;
+  margin: 0 auto 40px;
+}
+
+#reason-text {
+  min-height: 70px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  font-size: 1.1rem;
+  color: #b5305a;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 20px rgba(181, 48, 90, 0.12);
+}
+
+#reason-btn {
+  background: #b5305a;
+  color: #fff;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(181, 48, 90, 0.35);
+}
+
+#reason-btn:active {
+  transform: scale(0.97);
+}
+
+#gallery {
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+}
+
+#gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(181, 48, 90, 0.25);
+}
+
+.floating-heart {
+  position: fixed;
+  top: 100%;
+  font-size: 1.6rem;
+  pointer-events: none;
+  animation: floatUp linear forwards;
+  z-index: 5;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0) rotate(0deg); opacity: 1; }
+  to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+.confetti-piece {
+  position: fixed;
+  top: -10px;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+  z-index: 6;
+  animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+  to { transform: translateY(110vh) rotate(720deg); opacity: 0.9; }
+}

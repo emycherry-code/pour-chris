@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Une surprise pour toi</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="lock-screen">
+    <div class="heart-icon">💌</div>
+    <h1>Entre le code pour ouvrir ta surprise</h1>
+    <div id="code-display">
+      <span class="code-dot"></span>
+      <span class="code-dot"></span>
+      <span class="code-dot"></span>
+      <span class="code-dot"></span>
+    </div>
+    <div id="keypad">
+      <button class="key" data-digit="1">1</button>
+      <button class="key" data-digit="2">2</button>
+      <button class="key" data-digit="3">3</button>
+      <button class="key" data-digit="4">4</button>
+      <button class="key" data-digit="5">5</button>
+      <button class="key" data-digit="6">6</button>
+      <button class="key" data-digit="7">7</button>
+      <button class="key" data-digit="8">8</button>
+      <button class="key" data-digit="9">9</button>
+      <button class="key wide" id="key-clear">Effacer</button>
+      <button class="key" data-digit="0">0</button>
+    </div>
+    <p id="hint">indice : une date qui compte pour nous ✨</p>
+  </div>
+
+  <div id="love-page">
+    <h1 id="page-title">Pour toi ❤️</h1>
+    <p class="subtitle">Une petite surprise, juste parce que je t'aime.</p>
+
+    <div id="message"></div>
+
+    <div id="reasons-box">
+      <div id="reason-text">Clique pour découvrir une raison de plus...</div>
+      <button id="reason-btn">Encore une raison 💕</button>
+    </div>
+
+    <div id="gallery"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
